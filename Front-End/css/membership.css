@@ -1,0 +1,347 @@
+/* ============================================
+   MEMBERSHIP PAGE STYLES
+   ============================================ */
+
+.membership-header {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.92) 0%, rgba(168, 85, 247, 0.88) 50%, rgba(236, 72, 153, 0.85) 100%),
+        url('../images/hero/membership.png') center/cover no-repeat;
+    color: white;
+    padding: 64px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.membership-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: rotateBackground 30s linear infinite;
+}
+
+@keyframes rotateBackground {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.membership-header h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.membership-header p {
+    position: relative;
+    z-index: 1;
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+.membership-section {
+    padding: 80px 0;
+}
+
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-bottom: 80px;
+}
+
+.membership-card {
+    background: var(--surface);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    padding: 40px 32px;
+    text-align: center;
+    position: relative;
+    transition: var(--transition-slow);
+    box-shadow: var(--shadow-sm);
+}
+
+.membership-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.membership-card.featured {
+    border-color: var(--primary-color);
+    border-width: 3px;
+    box-shadow: var(--shadow-lg);
+}
+
+.membership-card.featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary-gradient);
+    opacity: 0.03;
+    border-radius: var(--radius-xl);
+}
+
+.popular-tag {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-gradient);
+    color: white;
+    padding: 6px 20px;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+    box-shadow: var(--shadow-md);
+    letter-spacing: 0.05em;
+}
+
+.membership-badge {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.bronze .membership-badge {
+    background: linear-gradient(135deg, #cd7f32 0%, #b87333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.silver .membership-badge {
+    background: linear-gradient(135deg, #c0c0c0 0%, #a8a8a8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gold .membership-badge {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.business .membership-badge {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.membership-price {
+    margin-bottom: 28px;
+}
+
+.membership-price .price {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.membership-price .period {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.membership-features {
+    text-align: left;
+    margin: 32px 0;
+}
+
+.membership-features li {
+    padding: 12px 0;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+}
+
+.membership-features li::before {
+    content: '✓';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-color);
+    border-radius: 50%;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.membership-card .btn {
+    width: 100%;
+    margin-top: 24px;
+}
+
+/* Benefits Section */
+.benefits-section {
+    background: var(--background);
+    padding: 64px 0;
+    border-radius: var(--radius-xl);
+    margin-top: 64px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 32px 24px;
+}
+
+.benefit-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.benefit-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.benefit-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* FAQ Section */
+.membership-faq {
+    margin-top: 80px;
+}
+
+.membership-faq h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 48px;
+    color: var(--text-primary);
+}
+
+.faq-grid {
+    display: grid;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--surface);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.faq-item:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.faq-question {
+    padding: 24px 28px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--text-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    transition: var(--transition);
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.faq-item:hover .faq-question {
+    color: var(--primary-color);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.faq-item.active .faq-question::after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+    padding: 0 28px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 28px 24px 28px;
+}
+
+.faq-item.active {
+    border-color: var(--primary-color);
+    background: rgba(99, 102, 241, 0.02);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .membership-header h1 {
+        font-size: 2.25rem;
+    }
+
+    .membership-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .membership-price .price {
+        font-size: 2.5rem;
+    }
+
+    .membership-faq h2 {
+        font-size: 2rem;
+    }
+
+    .faq-question {
+        padding: 20px;
+        font-size: 1rem;
+    }
+
+    .faq-answer {
+        padding: 0 20px;
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 0 20px 20px 20px;
+    }
+}

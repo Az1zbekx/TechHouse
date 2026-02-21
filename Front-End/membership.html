@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join Tech House membership program for exclusive benefits and discounts.">
+    <title>Membership - Tech House</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/membership.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Tech House Logo">
+                <span class="logo-icon">🏠</span>
+                <span class="logo-text">Tech House</span>
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="membership.html" class="nav-link active">Membership</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <form class="header-search" action="products.html" method="GET">
+                    <input type="search" name="search" placeholder="Search products..." aria-label="Search">
+                    <button type="submit" aria-label="Search button">🔍</button>
+                </form>
+                <a href="login.html" class="nav-link" aria-label="Login">
+                    <span style="font-size: 1.2rem;">👤</span>
+                </a>
+                <a href="cart.html" class="cart-btn">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="page-header membership-header">
+            <div class="container">
+                <h1>Membership Plans</h1>
+                <p>Join our loyalty program and enjoy exclusive benefits</p>
+            </div>
+        </section>
+
+        <section class="membership-section">
+            <div class="container">
+                <div class="membership-grid">
+                    <div class="membership-card bronze">
+                        <div class="membership-badge">Bronze</div>
+                        <div class="membership-price">
+                            <span class="price">Free</span>
+                            <span class="period">to join</span>
+                        </div>
+                        <ul class="membership-features">
+                            <li>✓ Basic loyalty points (1 point per $1)</li>
+                            <li>✓ Access to selected discounts</li>
+                            <li>✓ Birthday special offers</li>
+                            <li>✓ Newsletter with deals</li>
+                            <li class="disabled">✗ Priority support</li>
+                            <li class="disabled">✗ Free delivery</li>
+                            <li class="disabled">✗ Early access to sales</li>
+                        </ul>
+                        <button class="btn btn-outline membership-btn">Join Now</button>
+                    </div>
+
+                    <div class="membership-card silver">
+                        <div class="membership-badge">Silver</div>
+                        <div class="membership-price">
+                            <span class="price">$9.99</span>
+                            <span class="period">/ month</span>
+                        </div>
+                        <ul class="membership-features">
+                            <li>✓ Enhanced loyalty points (2x points)</li>
+                            <li>✓ All Bronze benefits</li>
+                            <li>✓ Priority customer support</li>
+                            <li>✓ Monthly exclusive offers</li>
+                            <li>✓ 10% off all purchases</li>
+                            <li class="disabled">✗ Free delivery</li>
+                            <li class="disabled">✗ Early access to new products</li>
+                        </ul>
+                        <button class="btn btn-outline membership-btn">Subscribe</button>
+                    </div>
+
+                    <div class="membership-card gold featured">
+                        <div class="popular-tag">Most Popular</div>
+                        <div class="membership-badge">Gold</div>
+                        <div class="membership-price">
+                            <span class="price">$19.99</span>
+                            <span class="period">/ month</span>
+                        </div>
+                        <ul class="membership-features">
+                            <li>✓ Maximum loyalty points (3x points)</li>
+                            <li>✓ All Silver benefits</li>
+                            <li>✓ Free delivery on all orders</li>
+                            <li>✓ Early access to new products</li>
+                            <li>✓ 15% off all purchases</li>
+                            <li>✓ Exclusive Gold member events</li>
+                            <li>✓ Extended warranty (3 years)</li>
+                        </ul>
+                        <button class="btn btn-primary membership-btn">Subscribe</button>
+                    </div>
+
+                    <div class="membership-card business">
+                        <div class="membership-badge">Business</div>
+                        <div class="membership-price">
+                            <span class="price">Custom</span>
+                            <span class="period">pricing</span>
+                        </div>
+                        <ul class="membership-features">
+                            <li>✓ Bulk purchase discounts</li>
+                            <li>✓ Dedicated account manager</li>
+                            <li>✓ Custom pricing tiers</li>
+                            <li>✓ Invoice payment options</li>
+                            <li>✓ Priority delivery</li>
+                            <li>✓ On-site installation service</li>
+                            <li>✓ Extended B2B warranty</li>
+                        </ul>
+                        <button class="btn btn-outline membership-btn">Contact Sales</button>
+                    </div>
+                </div>
+
+                <div class="membership-faq">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <div class="faq-question">How do loyalty points work?</div>
+                            <div class="faq-answer">Earn points on every purchase and redeem them for discounts on
+                                future orders. Bronze members earn 1 point per $1, Silver 2 points, and Gold 3 points.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Can I upgrade my membership?</div>
+                            <div class="faq-answer">Yes! You can upgrade at any time. Your new benefits will be
+                                available immediately, and we'll prorate the cost.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Is there a contract?</div>
+                            <div class="faq-answer">No long-term contracts. Cancel anytime with no cancellation fees.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">How does free delivery work?</div>
+                            <div class="faq-answer">Gold members get free standard delivery on all orders. Express
+                                delivery is available at a discounted rate.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Tech House</h4>
+                    <p>Your trusted source for quality home appliances and smart home solutions since 2020.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="products.html">All Products</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="products.html?category=Kitchen">Kitchen</a></li>
+                        <li><a href="products.html?category=Cleaning">Cleaning</a></li>
+                        <li><a href="products.html?category=Smart">Smart Home</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Store Location</h4>
+                    <p>123 Tech Street<br>Tashkent, Uzbekistan</p>
+                    <p>Mon-Sat: 9:00 - 20:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tech House. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products-data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // FAQ Accordion functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+
+                    // Close all FAQ items
+                    faqItems.forEach(faq => faq.classList.remove('active'));
+
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
