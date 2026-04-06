@@ -1,27 +1,63 @@
-import user from "../data/db.js";
+import users from "../data/db.js";
 import generateId from "../utils/generateId.js";
-import bcrypt from "bcrypt"
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
-export function register() {
-    console.log(`Checking request body ${req.body}`);
+async function register(req, res) {
+  const { username, email, password } = req.body;
 
-    const { username, email, password} = req.body
+  if (!username || !email || !password) {
+    return res
+      .status(400)
+      .json({ message: "Username, email and password are required!" });
+  }
 
-    if (!username || !email || !password){
-        return res.status(400).json({
-            message: "Username, email and password are required"
-        })
-    }
+  const existingUser = users.find((user) => user.email === email);
 
-    const passwordHash = bcrypt.hash(password, 10)
-    const user = {
-        id: generateId(users),
-        username,
-        email,
-        password
-    }
+  if (existingUser) {
+    return res.status(409).json({ message: "Email already exists!" });
+  }
 
-    console.log(`User info ${username} ${email} ${password}`);
+  const passwordHash = await bcrypt.hashSync(password, 10);
+
+  const newUser = {
+    id: generateId(users),
+    username,
+    email,
+    password: passwordHash,
+  };
+
+  users.push(newUser);
+  res.status(201).json({ message: "User registered successfully!" });
 }
 
-export function login() {}
+async function login(req, res) {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res
+      .status(400)
+      .json({ message: "Email and password are required!" });
+  }
+
+  const existingUser = users.find((user) => user.email === email);
+
+  if (!existingUser) {
+    return res.status(404).json({ message: "Invalid email or password!" });
+  }
+
+  const isPasswordCorrect = await bcrypt.compare(
+    password,
+    existingUser.password,
+  );
+
+  if (!isPasswordCorrect) {
+    return res.status(400).json({ message: "Invalid email or password!" });
+  }
+
+  const token = jwt.sign({ email }, "JWT Secret key", { expiresIn: "1d" });
+
+  return res.status(200).json({ message: "Login successful!", token });
+}
+
+export { register, login };
