@@ -1,3 +1,4 @@
-const user = [];
+export const users = [];
+export const products = [];
 
-export default user;
+

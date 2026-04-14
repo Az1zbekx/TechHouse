@@ -1,4 +1,4 @@
-import users from "../data/db.js";
+import { users } from "../data/db.js";
 import generateId from "../utils/generateId.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
