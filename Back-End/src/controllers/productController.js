@@ -46,9 +46,9 @@ export function updateProduct(req, res) {
         });
     };
 
-    const{name, description, price, stock, category, imageUrl} = req.body;
+    const{name, description, price, stock, category} = req.body;
     
-    if(!name || !description || !price || !stock  || !category || ! imageUrl){
+    if(!name || !description || !price || !stock  || !category){
         return res.status(400).json({message: "New product are required"})
     }
 
@@ -57,7 +57,6 @@ export function updateProduct(req, res) {
     product.price = price ?? product.price 
     product.stock = stock ?? product.stock
     product.category = category ?? product.category
-    product.imageUrl = imageUrl ?? product.imageUrl
     product.updated_at = Date()
 
     return res.status(200).json({message: "Product elements updeted successfully!"});
@@ -65,9 +64,9 @@ export function updateProduct(req, res) {
 };
 
 export function createProduct(req, res) {
-    const{name, description, price, stock, category, imageUrl} = req.body;
+    const{name, description, price, stock, category} = req.body;
 
-    if(!name || !description || !price || !stock  || !category || ! imageUrl){
+    if(!name || !description || !price || !stock  || !category){
         return res.status(400).json({message: "New product are required"})
     }
 
@@ -78,7 +77,6 @@ export function createProduct(req, res) {
         price,
         stock,
         category,
-        imageUrl,
         create_at: Date(),
         updated_at: Date()
     }
