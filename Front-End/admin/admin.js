@@ -78,9 +78,10 @@ async function loadProducts() {
   });
 
   const data = await response.json();
+
   console.log(data);
 
-  renderProducts(data.products);
+  renderProducts(data);
 }
 
 document
@@ -112,7 +113,7 @@ async function openEditModal(id) {
   const response = await fetch(`${BASE_URL}/api/products/${id}`);
   const data = await response.json();
 
-  let product = data.product;
+  let product = data;
 
   document.getElementById("productName").value = product.name || "";
   document.getElementById("productCategory").value = product.category || "";
@@ -275,9 +276,6 @@ document
 //   GET /api/products/:id     → use inside openEditModal if needed
 
 async function onCreateProduct(data) {
-
-    console.log(data)
-
   const response = await fetch(`${BASE_URL}/api/products`, {
     method: "POST",
     headers: {
@@ -286,8 +284,7 @@ async function onCreateProduct(data) {
     body: JSON.stringify(data),
   });
   const data_ = await response.json();
-  alert(data_.message);
-
+  console.log(data_);
 }
 
 async function onUpdateProduct(id, data) {

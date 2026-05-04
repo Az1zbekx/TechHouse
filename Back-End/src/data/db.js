@@ -1,16 +1,20 @@
-export const users = [];
+export const users = []
 export const products = [
-    {
+   {
         id: 1,
-        name: "iPhone 13 Pro",
-        description: "The latest iPhone with advanced features and improved performance.",
-        price: 500,
+        name: "Product 1",
+        description: "Description of Product 1",
+        price: "100",
         stock: 10,
-        category: "Electronic",
-        imageUrl: "https://example.com/iphone13pro.jpg",
-        created_at: "",
-        updated_at: "",
-    }
+        category: "Category 1",
+        image_url: "image1.jpg",
+        craetedAt:"",
+        updatedAt:""
+    },
 ];
-
-
+export const cartItems = [
+    {
+        id:"akf",
+        user_id
+    }
+]
