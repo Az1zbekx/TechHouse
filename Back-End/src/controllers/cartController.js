@@ -22,7 +22,9 @@ export function viewCartItem(req, res) {
             const product = products.find(p => p.id === item.product_id);
 
             return {
-                ...product,
+                name: product.name,
+                price: product.price,
+                image_url: product.image_url,
                 quantity: item.quantity
             };
         })
@@ -41,27 +43,41 @@ export function addToCart(req, res) {
         return res.status(404).json({ message: "Product not found" });
     }
 
-    let userCart = cartItems.find(item => item.user_id == userId);
+    if (product.stock = 1){
+        return res.status(400).json({ message: "Not enough stock"});
+    }
+   
+    let existing = cartItems.find((itme) => item.user_id == userId);
 
-    if (!userCart) {
-        userCart = {
+    if (!existing) {
+        existing = {
             id: uuidv4(),
             user_id: userId,
             products: [],
+            quantity: 0
         };
-        cartItems.push(userCart);
+        cartItems.push(existing);
     }
 
-    const existingItem = userCart.products.find(p => p.product_id === product_id);
+    const existingProduct = existing.product.find(
+        (item) => item.id == product_id,
+    );
 
-    if (existingItem) {
-        existingItem.quantity += 1;
+    if (existingProduct) {
+        existingProduct.quantity = 1;
     } else {
-        userCart.products.push({
-            product_id,
-            quantity: 1
-        });
+        existing.product.push({
+            id: product_id,
+            quantity: 1,
+        })
     }
 
-    res.json(userCart);
+    existing.quantity = existing.product.reduce(
+        (sum, item) => sum + item.quantity, 0
+    );
+
+    return res.status(200).json({message: "Product added to cart"});
 }
+
+export function removeCartItem(req, res){};
+export function updateCartItem(req, res){};

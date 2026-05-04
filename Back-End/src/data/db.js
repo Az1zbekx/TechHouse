@@ -15,6 +15,6 @@ export const products = [
 export const cartItems = [
     {
         id:"akf",
-        user_id
+        user_id: NaN
     }
 ]
