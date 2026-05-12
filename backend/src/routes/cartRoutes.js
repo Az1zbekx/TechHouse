@@ -7,5 +7,4 @@ router.post('/', addToCart);
 router.put('/:id', updateCartItem);
 router.delete('/:id', removeCartItem);
 
-
 export default router;
